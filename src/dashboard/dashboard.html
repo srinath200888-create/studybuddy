@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study Dashboard — StudyBuddy + ZeroScroll</title>
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+  <div class="dashboard">
+    <header class="topbar">
+      <div class="topbar-brand">
+        <span class="brand-icon">📚</span>
+        <div>
+          <h1 class="brand-title">Study Dashboard</h1>
+          <p class="brand-subtitle">StudyBuddy + ZeroScroll</p>
+        </div>
+      </div>
+      <nav class="topbar-nav">
+        <a class="nav-link" href="../notes/notes.html">Notes</a>
+        <a class="nav-link" href="../flashcards/flashcards.html">Flashcards</a>
+      </nav>
+    </header>
+
+    <main class="main">
+      <section class="hero-card" id="streakHero">
+        <div class="hero-content">
+          <p class="hero-label">Study Streak</p>
+          <div class="hero-streak">
+            <span class="hero-value" id="streakValue">0</span>
+            <span class="hero-unit" id="streakUnit">Days</span>
+            <span class="hero-emoji" id="streakEmoji"></span>
+          </div>
+          <p class="hero-message" id="streakMessage">Start studying today to begin your streak</p>
+        </div>
+        <div class="hero-ring" aria-hidden="true">
+          <svg viewBox="0 0 120 120" class="ring-svg">
+            <circle class="ring-bg" cx="60" cy="60" r="52"></circle>
+            <circle class="ring-progress" id="streakRing" cx="60" cy="60" r="52"></circle>
+          </svg>
+          <span class="ring-icon">🔥</span>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">Focus Time</h2>
+        <div class="stats-grid stats-grid-3">
+          <article class="stat-card stat-card-accent">
+            <span class="stat-icon">⏱</span>
+            <span class="stat-value" id="focusToday">0m</span>
+            <span class="stat-label">Today</span>
+          </article>
+          <article class="stat-card">
+            <span class="stat-icon">📅</span>
+            <span class="stat-value" id="focusWeekly">0m</span>
+            <span class="stat-label">This Week</span>
+          </article>
+          <article class="stat-card">
+            <span class="stat-icon">🏆</span>
+            <span class="stat-value" id="focusTotal">0m</span>
+            <span class="stat-label">All Time</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">Learning Activity</h2>
+        <div class="stats-grid stats-grid-2">
+          <article class="stat-card stat-card-large">
+            <div class="stat-card-header">
+              <span class="stat-icon">📝</span>
+              <span class="stat-badge" id="notesTodayBadge">+0 today</span>
+            </div>
+            <span class="stat-value" id="notesCount">0</span>
+            <span class="stat-label">Notes Saved</span>
+            <a class="stat-link" href="../notes/notes.html">View all notes →</a>
+          </article>
+          <article class="stat-card stat-card-large">
+            <div class="stat-card-header">
+              <span class="stat-icon">🃏</span>
+              <span class="stat-badge" id="cardsTodayBadge">+0 today</span>
+            </div>
+            <span class="stat-value" id="flashcardsCount">0</span>
+            <span class="stat-label">Flashcards Created</span>
+            <a class="stat-link" href="../flashcards/flashcards.html">Review flashcards →</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">Impact</h2>
+        <div class="impact-card">
+          <div class="impact-icon">✨</div>
+          <div class="impact-content">
+            <span class="impact-value" id="learningRecovered">0</span>
+            <span class="impact-label">Learning Minutes Recovered</span>
+            <p class="impact-desc">Time redirected from distractions back into studying</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-muted">
+        <h2 class="section-title">Session Status</h2>
+        <div class="session-bar" id="sessionBar">
+          <span class="session-dot" id="sessionDot"></span>
+          <span class="session-text" id="sessionText">No active focus session</span>
+          <span class="session-time" id="sessionTime"></span>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Data updates automatically · Last refreshed <span id="lastUpdated">—</span></p>
+    </footer>
+  </div>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>

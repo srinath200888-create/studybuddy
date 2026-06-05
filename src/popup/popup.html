@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StudyBuddy + ZeroScroll</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup">
+    <header class="header">
+      <div class="header-brand">
+        <div class="logo">📚</div>
+        <div class="header-text">
+          <h1 class="title">StudyBuddy</h1>
+          <p class="subtitle">ZeroScroll</p>
+        </div>
+      </div>
+      <div class="streak-badge" id="streakBadge" title="Study streak">
+        <span class="streak-count" id="streakCount">0</span>
+        <span class="streak-emoji" id="streakEmoji"></span>
+      </div>
+    </header>
+
+    <section class="timer-section">
+      <div class="timer-card">
+        <p class="section-label">Focus Session</p>
+        <div class="timer-display" id="timerDisplay">00:00</div>
+        <p class="timer-status" id="timerStatus">Ready to focus</p>
+        <div class="timer-controls" id="timerControls">
+          <button class="btn btn-primary" id="btnStart" type="button">
+            <span class="btn-icon">▶</span>
+            Start Session
+          </button>
+          <button class="btn btn-secondary hidden" id="btnPause" type="button">
+            <span class="btn-icon">⏸</span>
+            Pause
+          </button>
+          <button class="btn btn-primary hidden" id="btnResume" type="button">
+            <span class="btn-icon">▶</span>
+            Resume
+          </button>
+          <button class="btn btn-danger hidden" id="btnStop" type="button">
+            <span class="btn-icon">⏹</span>
+            Stop
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats-section">
+      <p class="section-label">Today's Progress</p>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <span class="stat-value" id="statFocusToday">0m</span>
+          <span class="stat-label">Focus Time</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-value" id="statNotesToday">0</span>
+          <span class="stat-label">Notes</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-value" id="statCardsToday">0</span>
+          <span class="stat-label">Flashcards</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-value" id="statWeeklyFocus">0m</span>
+          <span class="stat-label">This Week</span>
+        </div>
+      </div>
+    </section>
+
+    <nav class="nav-section">
+      <button class="nav-btn nav-btn-primary" id="btnDashboard" type="button">
+        <span class="nav-icon">📊</span>
+        <span class="nav-text">
+          <span class="nav-title">Dashboard</span>
+          <span class="nav-desc">View all stats</span>
+        </span>
+        <span class="nav-arrow">→</span>
+      </button>
+      <button class="nav-btn" id="btnNotes" type="button">
+        <span class="nav-icon">📝</span>
+        <span class="nav-text">
+          <span class="nav-title">Notes</span>
+          <span class="nav-desc" id="notesTotalLabel">0 saved</span>
+        </span>
+        <span class="nav-arrow">→</span>
+      </button>
+      <button class="nav-btn" id="btnFlashcards" type="button">
+        <span class="nav-icon">🃏</span>
+        <span class="nav-text">
+          <span class="nav-title">Flashcards</span>
+          <span class="nav-desc" id="cardsTotalLabel">0 created</span>
+        </span>
+        <span class="nav-arrow">→</span>
+      </button>
+    </nav>
+
+    <footer class="footer">
+      <span>Transform scrolls into study wins</span>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

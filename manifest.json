@@ -1,0 +1,54 @@
+{
+  "manifest_version": 3,
+  "name": "StudyBuddy + ZeroScroll",
+  "version": "1.0.0",
+  "description": "Transform distractions into learning opportunities. Gently interrupt scrolling and redirect toward notes, flashcards, and focus sessions.",
+  "icons": {
+    "16": "assets/icon16.png",
+    "48": "assets/icon48.png",
+    "128": "assets/icon128.png"
+  },
+  "action": {
+    "default_popup": "src/popup/popup.html",
+    "default_icon": {
+      "16": "assets/icon16.png",
+      "48": "assets/icon48.png",
+      "128": "assets/icon128.png"
+    },
+    "default_title": "StudyBuddy + ZeroScroll"
+  },
+  "background": {
+    "service_worker": "src/background/background.js"
+  },
+  "permissions": [
+    "storage",
+    "contextMenus",
+    "alarms",
+    "tabs"
+  ],
+  "host_permissions": [
+    "*://*.youtube.com/*",
+    "<all_urls>"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["*://*.youtube.com/shorts/*", "*://youtube.com/shorts/*"],
+      "js": [
+        "src/content/shortsTracker.js",
+        "src/content/interventionManager.js",
+        "src/content/youtubeDetector.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "src/dashboard/dashboard.html",
+        "src/notes/notes.html",
+        "src/flashcards/flashcards.html"
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
